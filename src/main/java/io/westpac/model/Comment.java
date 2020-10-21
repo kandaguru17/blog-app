@@ -2,6 +2,7 @@ package io.westpac.model;
 
 public class Comment {
 
+    private Integer id;
     private String name;
     private String email;
     private String body;
@@ -10,10 +11,13 @@ public class Comment {
         //for jackson serialisation/de-serialisation
     }
 
-    public Comment(String name, String email, String body) {
-        this.name = name;
-        this.email = email;
-        this.body = body;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -39,4 +43,6 @@ public class Comment {
     public void setBody(String body) {
         this.body = body;
     }
+
+
 }
