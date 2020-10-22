@@ -28,9 +28,9 @@ public class AppController {
     @GetMapping("")
     public ResponseEntity<List<Post>> getAllBlogPosts(@RequestParam(required = false, value = "limit") Optional<Integer> limit,
                                                       @RequestParam(required = false, value = "offset") Optional<Integer> offset,
-                                                      @RequestParam(required = false, value = "title") Optional<String> title) {
+                                                      @RequestParam(required = false, value = "keyword") Optional<String> keyword) {
         List<Post> allPosts = postService
-                .getAllPostsWithFilters(limit.orElse(10), offset.orElse(0), title.orElse(""));
+                .getAllPostsWithFilters(limit.orElse(10), offset.orElse(0), keyword.orElse(""));
         return ResponseEntity.ok(allPosts);
     }
 
