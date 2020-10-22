@@ -15,16 +15,16 @@ public class CommentService {
     @Value("${api.posts.url}")
     private String postsUri;
 
-    private final AppDao<Comment> commentAppDao;
+    private final AppDao<Comment> commentAppAppDao;
 
     @Autowired
-    public CommentService(AppDao<Comment> commentAppDao) {
-        this.commentAppDao = commentAppDao;
+    public CommentService(AppDao<Comment> commentAppAppDao) {
+        this.commentAppAppDao = commentAppAppDao;
     }
 
     public List<Comment> getAllComments(Integer postId) {
         String commentsUri = postsUri + "/" + postId + "/comments";
-        return commentAppDao.getAllAsList(commentsUri, new ParameterizedTypeReference<>() {
+        return commentAppAppDao.getAllAsList(commentsUri, new ParameterizedTypeReference<>() {
         });
     }
 
