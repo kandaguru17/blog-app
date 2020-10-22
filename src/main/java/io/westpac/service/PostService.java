@@ -59,10 +59,10 @@ public class PostService {
         Predicate<Post> filterPredicate = post -> post.getTitle().toLowerCase().contains(keyword) ||
                 post.getBody().toLowerCase().contains(keyword);
 
-        return allPosts.parallelStream()
+        return allPosts.stream()
                 .filter(filterPredicate)
-                .limit(limit)
                 .skip(limit * offset)
+                .limit(limit)
                 .collect(Collectors.toList());
     }
 }
