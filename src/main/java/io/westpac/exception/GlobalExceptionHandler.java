@@ -11,15 +11,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestController
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(Exception.class)
-    public final ResponseEntity<Object> handleGenericException(Exception e) {
-        HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+    @ExceptionHandler({NotFoundException.class,IllegalArgumentException.class})
+    public final ResponseEntity<Object> handleBadRequests(Exception e) {
+        HttpStatus httpStatus = HttpStatus.NOT_FOUND;
         return getResponseEntityException(e, httpStatus);
     }
 
-    @ExceptionHandler(NotFoundException.class)
-    public final ResponseEntity<Object> handleNotFoundException(Exception e) {
-        HttpStatus httpStatus = HttpStatus.NOT_FOUND;
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity<Object> handleGenericException(Exception e) {
+        HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         return getResponseEntityException(e, httpStatus);
     }
 
