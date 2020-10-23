@@ -17,6 +17,12 @@ public class Post {
         //for jackson serialisation/de-serialisation
     }
 
+    public Post(Integer id, String title, String body) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
+
     public Integer getId() {
         return id;
     }
