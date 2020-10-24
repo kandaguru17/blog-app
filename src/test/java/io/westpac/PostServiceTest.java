@@ -58,7 +58,7 @@ public class PostServiceTest {
         String uri = "";
         String uriWithPageAttributes = "?_limit=2&_start=0";
 
-        when(abstractDao.getAllAsList(uriWithPageAttributes, new ParameterizedTypeReference<>() {
+        when(abstractDao.getAllAsList(uriWithPageAttributes, new ParameterizedTypeReference<List<Post>>() {
         })).thenReturn(Arrays.asList(post, post));
         when(appUtils.generateUrlWithPageAttributes(uri, limit, offset)).thenCallRealMethod();
 
