@@ -11,6 +11,12 @@ public class Comment {
         //for jackson serialisation/de-serialisation
     }
 
+    public Comment(Integer id, String name, String email, String body) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.body = body;
+    }
 
     public Integer getId() {
         return id;

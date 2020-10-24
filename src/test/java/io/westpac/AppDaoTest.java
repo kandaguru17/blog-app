@@ -3,7 +3,6 @@ package io.westpac;
 import io.westpac.dao.AppDao;
 import io.westpac.exception.NotFoundException;
 import io.westpac.model.Post;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -33,10 +32,6 @@ public class AppDaoTest {
 
     @Mock
     RestTemplate restTemplate;
-
-    @BeforeEach
-    public void setUp() {
-    }
 
     @Test
     public void getAllAsList_shouldReturnList() {
