@@ -18,4 +18,4 @@ This project uses:
 To run the application
 1. clone the repository `https://github.com/kandaguru17/blog-app-api.git`
 2. move to the directory where pom.xml is located
-3. run `./mvnw clean install && ./mvnw spring-boot:run`, the command will create a test, build and start the application.
+3. run `./mvnw clean install && ./mvnw spring-boot:run`, the command will run the tests, creates a build and starts the application.
