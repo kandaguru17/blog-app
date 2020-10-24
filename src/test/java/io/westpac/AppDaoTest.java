@@ -75,7 +75,7 @@ public class AppDaoTest {
     }
 
     public ParameterizedTypeReference<List<Post>> createParameterizedTypeReference() {
-        return new ParameterizedTypeReference<>() {
+        return new ParameterizedTypeReference<List<Post>>() {
         };
     }
 

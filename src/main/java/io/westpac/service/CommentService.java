@@ -24,7 +24,7 @@ public class CommentService {
 
     public List<Comment> getAllComments(Integer postId) {
         String commentsUri = postsUri + "/" + postId + "/comments";
-        return commentAppAppDao.getAllAsList(commentsUri, new ParameterizedTypeReference<>() {
+        return commentAppAppDao.getAllAsList(commentsUri, new ParameterizedTypeReference<List<Comment>>() {
         });
     }
 

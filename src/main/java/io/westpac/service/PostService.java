@@ -37,7 +37,7 @@ public class PostService {
             return searchPostByKeyword(title, limit, offset);
 
         String uri = appUtils.generateUrlWithPageAttributes(postUri, limit, offset);
-        return appDao.getAllAsList(uri, new ParameterizedTypeReference<>() {
+        return appDao.getAllAsList(uri, new ParameterizedTypeReference<List<Post>>() {
         });
     }
 
@@ -53,11 +53,11 @@ public class PostService {
 
 
     public List<Post> searchPostByKeyword(String keyword, Integer limit, Integer offset) {
-        List<Post> allPosts = appDao.getAllAsList(postUri, new ParameterizedTypeReference<>() {
+        List<Post> allPosts = appDao.getAllAsList(postUri, new ParameterizedTypeReference<List<Post>>() {
         });
 
-        Predicate<Post> filterPredicate = post -> post.getTitle().toLowerCase().contains(keyword) ||
-                post.getBody().toLowerCase().contains(keyword);
+        Predicate<Post> filterPredicate = post -> post.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
+                post.getBody().toLowerCase().contains(keyword.toLowerCase());
 
         return allPosts.stream()
                 .filter(filterPredicate)
