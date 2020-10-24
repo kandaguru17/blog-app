@@ -1,5 +1,5 @@
 ## Blog App Api
-This is an API project built using Spring-boot (java) which uses the `https://jsonplaceholder.typicode.com/` as its data-source
+This is an API project built using Spring-boot (java 8) which uses the `https://jsonplaceholder.typicode.com/` as its data-source
 
 ### Dependencies
 This project uses:
